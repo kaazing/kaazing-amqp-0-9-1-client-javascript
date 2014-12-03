@@ -6,35 +6,6 @@
 
 <!DOCTYPE html>
 <head>
-<!--
-
-    Copyright (c) 2007-2014, Kaazing Corporation. All rights reserved.
-
--->
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-    
-        <!-- Required for IE6/IE7 cross-origin support -->
-        <meta name="kaazing:postMessageBridgeURL" content="PostMessageBridge.html">
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <link rel="icon" href="../../../resources/images/favicon.ico">
-        <title>Kaazing | Demos</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="../../../resources/css/normalize.css">
-        <link rel="stylesheet" href="../../../resources/css/dev.css">
-        <link rel="stylesheet" href="../../../resources/css/demo.css">
-        <!--[if lte IE 7]> <link rel="stylesheet" href="../../../resources/css/demo-ie.css"> <![endif]-->
-
-        <script src="../../../resources/js/jquery-1.9.1.min.js"></script>
-        <script src="../../../resources/js/modernizr.js"></script>
-
   <script src="WebSocket.js"></script>
   <script src="amqp-0-9-1.js"></script>
 	<style type="text/css" media="screen">
@@ -547,44 +518,10 @@
 <title>Real-Time Interactive Guide to AMQP</title>
 </head>
 <body>
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <a href="http://www.kaazing.com" target="_blank"><div class="title logo"></div></a>
-                <nav>
-                    <ul>
-                        <li><a href="../../../../index.html">Demos</a></li>
-                        <li><a class="commandCenterLink" href="#" target="_blank">Command Center</a></li>
-                        <li><a href="http://tech.kaazing.com/documentation/amqp/4.0/index.html" target="_blank">Documentation</a></li>
-                        <li><a href="http://developer.kaazing.com/" target="_blank">Developer Home</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
 
-        <div class="main-container ">
-            <div class="main wrapper clearfix">
-            
-                <div class="powered-wrapper">
-                    <div class="powered-header"></div>
-                </div>
-                
-<!-- End header -->
-
-                <article>
-                
-                    <ul class="breadcrumbs clearfix">
-                       <li><a href="../../../index.html">Home</a></li>
-                       <li><a href="../../index.html">Demos</a></li>
-                       <li><a href="../../index.html#javascript">JavaScript</a></li>
-                       <li>Real-Time Interactive Guide to AMQP</li>
-                    </ul>
-
-                    <section>
-											
-    <div id="main_header">
         <h1>Real-Time Interactive Guide to AMQP</h1>
 
-<p><strong>Technology used</strong>: AMQP 0-9-1 and Kaazing WebSocket Gateway</p>
+<p><strong>Technology used</strong>: AMQP 0-9-1 and KAAZING Gateway</p>
 <p>The following is an interactive guide that takes you step-by-step through the main features of the Advanced Message Queuing Protocol (AMQP). This document contains the following sections:</p>
 <ul class="arrow-2">
   <li><a href="#about_amqp">About AMQP</a></li>
@@ -601,7 +538,7 @@
       <li><a href="#summary">Summary</a></li>
 </ul>
 <h2><a name="about_amqp"></a>About AMQP</h2>
-<p>AMQP is an open standard for messaging middleware originally designed by the financial services industry to provide an interoperable protocol for managing the flow of enterprise messages. AMQP uses a compact, efficient binary format for messaging and specifies  both messaging capabilities and a network wire-level protocol. For more information about  AMQP, visit <a href="http://www.amqp.org" class="code_inline">http://www.amqp.org</a>.</p>
+<p>AMQP is an open standard for messaging middleware originally designed by the financial services industry to provide an interoperable protocol for managing the flow of enterprise messages. AMQP uses a compact, efficient binary format for messaging and specifies both messaging capabilities and a network wire-level protocol. For more information about  AMQP, visit <a href="http://www.amqp.org" class="code_inline">http://www.amqp.org</a>.</p>
 <p>The 0-9-1 AMQP model defines the following components:</p>
 <ul class="arrow-2">
   <li><strong>Exchange</strong>--clients publish messages to an exchange</li>
@@ -609,24 +546,26 @@
   <li><strong>Binding</strong>--a mapping from an exchange to a queue</li>
   </ul>
 <p>An AMQP client connects to an AMQP broker and opens a channel. Once the channel is established, the client  can send messages to an exchange  and receive messages from a queue.</p>
+
 <h2><strong><a name="about_rt_guide"></a>About This Real-Time Interactive Guide</strong></h2>
-<p>This isn't your ordinary animated demo; instead, this is a real-time HTML5 Web page that communicates natively with an AMQP broker using a  bidirectional WebSocket connection--provided by Kaazing WebSocket Gateway--which reliably extends the AMQP messaging protocol to the Web with ultra high performance and minimal latency. If you'd like to see the code that was used to build this real-time Web page,  check the source of this  page and refer to the document <a href="http://developer.kaazing.com/documentation/amqp/4.0/dev-js/o_dev_js.html">Checklist: How to Build JavaScript Clients Using Kaazing WebSocket Gateway</a>.</p>
+
+<p>This isn't your ordinary animated demo; instead, this is a real-time HTML5 Web page that communicates natively with an AMQP broker using a bidirectional WebSocket connection--provided by KAAZING Gateway--which reliably extends the AMQP messaging protocol to the Web with ultra high performance and minimal latency. <!-- If you'd like to see the code that was used to build this real-time Web page, check the source of this page and refer to the document <a href="http://developer.kaazing.com/documentation/amqp/4.0/dev-js/o_dev_js.html">Checklist: How to Build JavaScript Clients Using KAAZING Gateway</a>. --></p>
 <span class="note"> <b>Notes:</b><br>
 <ul class="arrow-2">
   <li>This guide uses version 0-9-1 of the AMQP protocol.</li>
-  <li>To use this interactive guide, you must install and run the Kaazing WebSocket Gateway bundle and an AMQP Message broker as described in <a href="http://developer.kaazing.com/documentation/amqp/4.0/about/setup-guide.html" title="Kaazing | Documentation">Setting Up Kaazing WebSocket Gateway</a>.</li>
+  <li>To use this interactive guide, you must install and run the KAAZING Gateway and an AMQP Message broker <!-- as described in <a href="http://developer.kaazing.com/documentation/amqp/4.0/about/setup-guide.html" title="Kaazing | Documentation">Setting Up KAAZING Gateway</a> -->.</li>
   </ul>
 </span>
 <h2><a name="connect_broker"></a>Connecting to an AMQP Broker</h2>
 
-<p>Before you can use the messaging features of an AMQP broker, you must establish a connection to the broker by specifying the broker address, a user name and  password, and, optionally, a virtual host  name (the name of a collection of exchanges and queues hosted on independent server domains). An AMQP client generally  manages all of its communication on a single connection to an AMQP broker.</p>
+<p>Before you can use the messaging features of an AMQP broker, you must establish a connection to the broker by specifying the broker address, a user name and password, and, optionally, a virtual host name (the name of a collection of exchanges and queues hosted on independent server domains). An AMQP client generally  manages all of its communication on a single connection to an AMQP broker.</p>
 
 
 <p>First, you must connect the client with an AMQP broker. To do this, perform the following steps:</p>
 <ol>
   <li>Accept the default values for all text boxes.</li>
   <li><p>Click <strong>Connect</strong>.</p>
-    <p>The status should change from <span class="code_inline">Not connected</span> to <span class="code_inline">Connected</span>. The <strong>Location</strong> text box specifies a WebSocket URL (by default <span class="code_inline">ws://localhost:8001/amqp</span>) to your  AMQP broker. The WebSocket connectivity is enabled by Kaazing WebSocket Gateway.</p></li>
+    <p>The status should change from <span class="code_inline">Not connected</span> to <span class="code_inline">Connected</span>. The <strong>Location</strong> text box specifies a WebSocket URL (by default <span class="code_inline">ws://localhost:8001/amqp</span>) to your  AMQP broker. The WebSocket connectivity is enabled by KAAZING Gateway.</p></li>
   </ol>
 
     <fieldset>
@@ -657,7 +596,7 @@
 
     <h2> <a name="create_channels"></a>Creating Channels</h2>
 
-    <p>Once a connection to an AMQP broker has been established, the client must create a  channel to communicate to the broker. A channel is a bi-directional connection between an AMQP client and an AMQP broker. AMQP is multi-channeled, which means that channels are multiplexed over a single network socket connection. Channels are  light-weight and cheap, and therefore used in AMQP's exception handling mechanism--channels are closed when an exception occurs.</p>
+    <p>Once a connection to an AMQP broker has been established, the client must create a channel to communicate to the broker. A channel is a bi-directional connection between an AMQP client and an AMQP broker. AMQP is multi-channeled, which means that channels are multiplexed over a single network socket connection. Channels are light-weight and cheap, and therefore used in AMQP's exception handling mechanism--channels are closed when an exception occurs.</p>
     <p>Let's create two channels--one for publishing messages to an exchange and one for consuming messages from a queue. To do this, perform the following step:</p>
     <ol>
       <li><p>Click <strong>New Channel</strong> twice.</p>
@@ -677,11 +616,11 @@
 <h2><a name="creating_exchanges"></a>Declaring an Exchange</h2>
 
 
-<p>AMQP messages are published to exchanges. Messages contain a <em>routing key</em> that contains the information about the message's destination. The exchange  accepts messages and their routing keys and delivers them to a message queue. You can think of an exchange as an electronic mailman   that delivers the messages to a mailbox (the queue) based on the address on the message's envelope (the routing key). Exchanges do not store messages.</p>
-<p>AMQP defines different exchange types. Some of these exchange types (Direct, Fanout, and Topic)  must be supported by all AMQP brokers  while others (Headers and System) are optional. AMQP brokers can also support custom exchange types.The following are the different types of exchanges:</p>
+<p>AMQP messages are published to exchanges. Messages contain a <em>routing key</em> that contains the information about the message's destination. The exchange accepts messages and their routing keys and delivers them to a message queue. You can think of an exchange as an electronic mailman that delivers the messages to a mailbox (the queue) based on the address on the message's envelope (the routing key). Exchanges do not store messages.</p>
+<p>AMQP defines different exchange types. Some of these exchange types (Direct, Fanout, and Topic) must be supported by all AMQP brokers while others (Headers and System) are optional. AMQP brokers can also support custom exchange types. The following are the different types of exchanges:</p>
 <ul class="arrow-2">
-  <li><strong>Direct</strong>--Messages  are sent only to a queue that is bound with a binding key that matches the message's routing key.</li>
-  <li><strong>Fanout</strong>--Messages are  sent to every queue that is bound to the exchange.</li>
+  <li><strong>Direct</strong>--Messages are sent only to a queue that is bound with a binding key that matches the message's routing key.</li>
+  <li><strong>Fanout</strong>--Messages are sent to every queue that is bound to the exchange.</li>
   <li><strong>Topic</strong>--Messages are sent to a queue based on categorical binding keys and wildcards.</li>
   <li><strong>Headers</strong>--Messages are sent to a queue based on their header property values.</li>
   <li><strong>System</strong>--Messages are sent to system services.</li>
@@ -737,7 +676,7 @@
     
 		<p>To check if a queue exists on the AMQP broker (without creating it), you can create a <em>passive</em> queue. Additionally, queues can be marked <em>exclusive</em>, which means that they are tied to a specific connection.     If a queue is marked exclusive, it is deleted when the connection on which it was created is closed.</p>
 
-    <p>Queues can be <em>durable</em>, meaning that the queue   survives broker shut-down and must be deleted manually or <em>non-durable</em> (temporary) meaning that the queue lasts only until the broker is shut down. Queues can  also be marked  Auto Delete, which means that the queue is automatically deleted  when it is no longer in use.</p>
+    <p>Queues can be <em>durable</em>, meaning that the queue survives broker shut-down and must be deleted manually or <em>non-durable</em> (temporary) meaning that the queue lasts only until the broker is shut down. Queues can  also be marked  Auto Delete, which means that the queue is automatically deleted when it is no longer in use.</p>
 
     <p>Let's declare a temporary queue called <span class="code_inline">myqueue</span> on channel 2. You'll use this queue to consume the messages that were published on  channel 1. To do this, perform the following steps:</p>
     <ol>
@@ -965,86 +904,7 @@
 <button id="falseFlow">Flow  Off</button>
 </fieldset>
 <h2><a name="summary"></a>Summary</h2>
-<p>In this interactive, step-by-step document you have seen how the main features of AMQP work. Although not every single protocol feature was explained or shown in this guide,  you should now have a  good overview of what is possible with AMQP and you may be able to think of some practical use cases for AMQP. For more information on how to write your own AMQP Web client, refer to  the document <a href="http://developer.kaazing.com/documentation/amqp/4.0/dev-js/o_dev_js.html">Checklist: How to Build JavaScript Clients Using Kaazing WebSocket Gateway</a>.</p>
+<p>In this interactive, step-by-step document you have seen how the main features of AMQP work. Although not every single protocol feature was explained or shown in this guide,  you should now have a  good overview of what is possible with AMQP and you may be able to think of some practical use cases for AMQP. <!-- For more information on how to write your own AMQP Web client, refer to  the document <a href="http://developer.kaazing.com/documentation/amqp/4.0/dev-js/o_dev_js.html">Checklist: How to Build JavaScript Clients Using KAAZING Gateway</a>. --></p>
 
-        <div class="footer-container">
-            <footer class="wrapper">
-
-<div class="section group">
-	<div class="items col span_1_of_5">
-                           <h3><a href="http://www.kaazing.com/products/">Kaazing.com</a></h3>
-                            <ul>
-                                <li><a href="http://www.kaazing.com/products/kaazing-websocket-gateway/">Overview</a></li>
-                                <li><a href="http://www.kaazing.com/products/editions/">Product Editions</a></li>
-                                <li><a href="http://www.kaazing.com/products/benefits-and-roi/">Benefits & ROI</a></li>
-                                <li><a href="http://www.kaazing.com/products/deployment-options/">Deployment Options</a></li>
-                                <li><a href="http://developer-stage.kaazing.com/product-demos/">Online Demos</a></li>
-                                <li><a href="http://www.kaazing.com/websocket/">WebSocket</a></li>
-                            </ul>
-	</div>
-	<div class="items col span_1_of_5">
-                            <h3><a href="http://developer.kaazing.com/">Developer</a></h3>
-                            <ul>
-                                <li><a href="http://developer.kaazing.com/whykaazing/">Why Kaazing</a></li>
-                                <li><a href="http://developer.kaazing.com/downloads/">Downloads</a></li>
-                                <li><a href="http://developer.kaazing.com/how-tos/">Tech Papers</a></li>
-                                <li><a href="http://developer.kaazing.com/forums/">Forums</a></li>
-                                <li><a href="http://developer.kaazing.com/product-demos/">Product Demos</a></li>
-                                <li><a href="http://tech.kaazing.com/documentation/faq.html">FAQ</a></li>
-                                <li><a href="http://tech.kaazing.com/documentation/index.html">Documentation</a></li>
-                            </ul>
-	</div>
-	<div class="items col span_1_of_5">
-                            <h3><a href="http://www.kaazing.com/services/">Services</a></h3>
-                            <ul>
-                                <li><a href="http://www.kaazing.com/services/kaazing-global-support/">Support</a></li>
-                                <li><a href="http://www.kaazing.com/services/consulting/">Consulting</a></li>
-                                <li><a href="http://www.kaazing.com/services/training/">Training</a></li>
-                            </ul>
-	</div>
-	<div class="items col span_1_of_5">
-                            <h3><a href="http://www.kaazing.com/cloud/">Cloud</a></h3>
-                            <ul>
-                                <li><a href="http://www.kaazing.com/cloud/amis/">AWS AMIS</a></li>
-                                <li><a href="http://www.kaazing.com/cloud/faq/">AWS FAQS</a></li>
-                            </ul>
-	</div>
-	<div id="contact" class="col span_1_of_5">
-                        <h3>Get in Touch</h3>
-                        <div class="contact-details">
-                            <p>T +1 (877)&shy; KAAZING<br />
-                            T +1 (877)&shy; 522-9464<br />
-                            F +1 (650)&shy; 960-8145</p>
-                            
-                            <p>Worldwide Headquarters<br />
-                            Kaazing Corporation<br />
-                            6001 America Center Drive<br/>
-                            Suite 250<br />
-                            San Jose, CA 95002, USA</p>
-                        </div>
-	</div>
-</div>
-           
-                <div class="k-bottom clearfix">
-                        <a href="#">
-			                <div class="logo"></div>
-                        </a>
-                        <div class="copyright"><!--[if lte IE 7]>&copy; 2007 - 2014 Kaazing Corporation. All Rights Reserved.<![endif]--></div>
-		                <div class="powered-footer"></div>
-                </div>
-            </footer>
-        </div>
-
-		<script>
-            $( document ).ready(function() {
-                $('.commandCenterLink').attr('href', "http://"+$(location).attr('hostname')+":8000/commandcenter");
-			
-				if( $("html").hasClass("lt-ie9") ) {
-					// Resize background CSS images for IE8 and lower.
-					$("header div.logo").css({backgroundSize: "contain"});
-					$("footer div.logo").css({backgroundSize: "contain"});
-				};
-            });
-        </script>
 </body>
 </html>
