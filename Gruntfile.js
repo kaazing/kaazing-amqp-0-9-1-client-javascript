@@ -88,19 +88,6 @@ module.exports = function(grunt) {
             },
         },
 
-        compress : {
-            zip : {
-                options : {
-                    archive : './dist/Amqp-0-9-1-demo.zip',
-                },
-                files : [ {
-                    expand : true,
-                    src : "**/*",
-                    cwd : "dist/"
-                } ]
-            },
-        },
-
         karma : {
             test : {
                 configFile : 'test/karma.config.js'
@@ -119,11 +106,9 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-yuidoc2md');
 
-    grunt.loadNpmTasks('grunt-contrib-compress');
-
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', [ 'clean', 'yuidoc2md', 'concat', 'uglify', 'copy', 'compress' ]);
+    grunt.registerTask('default', [ 'clean', 'yuidoc2md', 'concat', 'uglify', 'copy' ]);
 
     grunt.registerTask('test', [ 'karma' ]);
 
