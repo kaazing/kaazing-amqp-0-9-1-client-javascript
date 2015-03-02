@@ -157,6 +157,7 @@ _prototype._init = function() {
                          "consumeOkBasicFrame",
                          "recoverOkBasicFrame",
                          "rejectOkBasicFrame",
+                         "qosOkBasicFrame",
 
 
                         // async message delivery:
@@ -742,9 +743,9 @@ var initChannel = function initChannel(channel, id, connection, cb) {
                          "deleteExchangeAction",
                          "purgeQueueAction",
                          "cancelBasicAction",
+                         "qosBasicAction",
 
                          "recoverBasicAction",
-                         "rejectBasicAction",
 
 
                          "selectTxAction",
@@ -756,7 +757,8 @@ var initChannel = function initChannel(channel, id, connection, cb) {
 
             // perform asychronous action and stay in the ready state
             {"inputs": ["publishBasicAction",
-                        "ackBasicAction"
+                        "ackBasicAction",
+                        "rejectBasicAction"
                         ], "targetState" : "channelReady"},
 
             // start getting a single message
@@ -806,6 +808,7 @@ var initChannel = function initChannel(channel, id, connection, cb) {
                          "cancelOkBasicFrame",
                          "recoverOkBasicFrame",
                          "rejectOkBasicFrame",
+                         "qosOkBasicFrame",
 
 
                          // transactions
