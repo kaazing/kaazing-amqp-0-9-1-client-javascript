@@ -54,6 +54,8 @@
                 return "recover";
             case "rejectOkBasic":
                 return "reject";
+            case "qosOkBasic":
+                return "qos";
                 
             case "error":
                 return "error";
